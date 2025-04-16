@@ -8,7 +8,7 @@ function App() {
 
   // Fetch blog posts from backend
   useEffect(() => {
-    fetch('http://localhost:5000/api/posts')
+    fetch('http://localhost:3001/api/posts')
       .then(res => res.json())
       .then(data => setPosts(data))
       .catch(err => console.error('Error fetching posts:', err));
@@ -18,7 +18,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('http://localhost:5000/api/posts', {
+    const res = await fetch('http://localhost:3001/api/posts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content })
